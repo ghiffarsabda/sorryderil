@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sorry Derila</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background-color: #fff;
+      color: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .box {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 6px;
+      border: 1px solid #e0e0e0;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+    }
+    .center-img {
+      display: block;
+      margin: 20px auto;
+      max-width: 100%;
+      border-radius: 4px;
+    }
+    .choices {
+      text-align: center;
+      margin-top: 20px;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      border: 1px solid #000;
+      border-radius: 4px;
+      background-color: #fff;
+      color: #000;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.2s, color 0.2s;
+    }
+    button:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="box" id="content">
+    <img src="https://i.ytimg.com/vi/tVlcKp3bWH8/maxresdefault.jpg" class="center-img" alt="Hello" />
+    <p>hello</p>
+    <div class="choices">
+      <button onclick="next('hi')">hi</button>
+    </div>
+  </div>
+
+  <script>
+    function next(step) {
+      const content = document.getElementById('content');
+
+      switch(step) {
+        case 'hi':
+          content.innerHTML = `
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/dc/Thomas_Tank_Engine_1.JPG/250px-Thomas_Tank_Engine_1.JPG" class="center-img" alt="Thomas" />
+            <p>is ur name derila maritza anindita thomas?</p>
+            <div class="choices">
+              <button onclick="next('yes')">yes</button>
+              <button onclick="next('no')">no</button>
+            </div>
+          `;
+          break;
+        case 'yes':
+          content.innerHTML = `
+            <img src="https://cdn-useast1.kapwing.com/static/templates/crying-cat-meme-template-full-719a53dc.webp" class="center-img" alt="Sad Puppy" />
+            <p>i'm sorry i wasn't a good boy</p>
+            <div class="choices">
+              <button onclick="next('accepted')">ok apology accepted</button>
+              <button onclick="next('tryagain')">try again</button>
+            </div>
+          `;
+          break;
+        case 'no':
+          content.innerHTML = `
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGU2cr393EJqa90ZS5R4uaSsOV3KcqPVCV6w&s" class="center-img" alt="Angry" />
+            <p>fuck off</p>
+            <div class="choices">
+              <button onclick="next('restart')">try again</button>
+            </div>
+          `;
+          break;
+        case 'restart':
+          next('hi');
+          break;
+        case 'accepted':
+          content.innerHTML = `
+            <img src="https://i.imgur.com/jQnQ9YF.jpeg" class="center-img" alt="Happy Cat" />
+            <p>Yey thanks luv u dei</p>
+          `;
+          break;
+        case 'tryagain':
+          content.innerHTML = `
+            <img src="https://i.imgflip.com/29s5ao.jpg?a485856" class="center-img" alt="Flaming Elmo" />
+            <p>HAVE MERCY UPON MY SOUL DERIL</p>
+            <div class="choices">
+              <button onclick="next('offer1')">what will u do?</button>
+            </div>
+          `;
+          break;
+        case 'offer1':
+          content.innerHTML = `
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/0b/d8/fe/ladies-we-have-a-special.jpg?w=900&h=500&s=1" class="center-img" alt="Massage" />
+            <p>i will give u full body massage for 1 hour</p>
+            <div class="choices">
+              <button onclick="next('deal')">deal</button>
+              <button onclick="next('nodeal')">no deal</button>
+            </div>
+          `;
+          break;
+        case 'deal':
+          content.innerHTML = `
+            <img src="https://media.tenor.com/BrSW_82G4xkAAAAM/pa-ti-bb.gif" class="center-img" alt="Happy Cat" />
+            <p>Yey thanks luv u dei</p>
+          `;
+          break;
+        case 'nodeal':
+          content.innerHTML = `
+            <img src="https://luxspa.rs/wp-content/uploads/2021/06/masaza-svecom.jpg" class="center-img" alt="Massage with candles" />
+            <p>1 hour massage with candles</p>
+            <div class="choices">
+              <button onclick="next('deal')">ok fine</button>
+            </div>
+          `;
+          break;
+      }
+    }
+  </script>
+</body>
+</html>
